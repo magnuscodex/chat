@@ -2,7 +2,7 @@
 
 import socket
 
-TCP_IP = "127.0.0.1"
+TCP_IP = ""
 TCP_PORT = 4675
 BUFF_SIZE = 1024
 
