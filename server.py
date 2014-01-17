@@ -72,8 +72,10 @@ while len(connections) > 0:
         connections[i].close()
         connections[i] = None
     else:
-      #The received list has a 1-1 correspondence with the connections list
+      #The received list needs a 1-1 correspondence with the connections list
+      #This is used to pair messages with sending clients
       received += [None]
+  #Send messages received to all but sending client.
   for i in range(0, len(received)):
     msg = received[i]
     if not msg:

@@ -21,10 +21,13 @@ host = raw_input("server name:")
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((host, TCP_PORT))
 while True:
+  #First send input, if any
   rlist, _, _ = select([sys.stdin], [], [], TIMEOUT)
   if rlist:
     msg = sys.stdin.readline()
     s.send(msg)
+
+  #Second, print all messages received
   received = True
   while received:
     rlist, _, _ = select([s], [], [], TIMEOUT)
