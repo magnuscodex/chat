@@ -55,7 +55,6 @@ client_listener.start()
 #Main loop to receive message and send them to all clients other
 # than the sending client.
 while len(connections) > 0:
-  print len(connections)
   received = []
   m_conns.acquire()
   #Listen to all connections in turn.
